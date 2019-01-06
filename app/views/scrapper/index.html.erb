@@ -1,0 +1,32 @@
+<div>
+	<div class="box-header grd-white corner-top">
+    <h4> Most Commonly Used Words </h4>
+  </div>
+	<div class ="box-body">
+		<%= form_tag url_for(:controller => "scrapper", :action => "get_words_count"), :remote => true do %>
+			<div class = "form-horizontal" >
+				<div class="form-group">
+					<label class="control-label col-md-2" for="scrapper_url">Enter Url</label>
+					<div class="controls col-md-3" ><%= text_field 'scrapper', 'url',  :autocomplete => "off", :class=>"form-control", placeholder: "https://hiverhq.com/", required: true%></div>
+				</div>
+			</div>
+			<div class = "form-horizontal" >
+				<div class="form-group">
+					<label class="control-label col-md-2" for="scrapper_count">Count Of Words</label>
+					<div class="controls col-md-3" ><%= text_field 'scrapper', 'count',  :autocomplete => "off", :class=>"form-control", placeholder: "3", required: true %></div>
+				</div>
+			</div>
+			<div class ="form-group">
+				<label class="col-md-2">&nbsp;</label>
+				<div class="col-md-6">
+					<%= submit_tag "Get Count", :disable_with => "#{t 'admin_layout.processing_please_wait'}", :class => "btn btn-primary" %>
+				</div>  
+			</div> 
+		<% end %>
+	</div>
+	</br>
+	</br>
+	<div id="words_count_body"></div>
+</div>
+
+	

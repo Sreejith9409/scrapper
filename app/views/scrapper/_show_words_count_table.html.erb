@@ -1,0 +1,16 @@
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Sl.No</th>
+			<th>Words</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @words_arr.each_with_index do |word, index| %>
+			<tr>
+				<td><%= index + 1%></td>
+				<td><%= word%></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
